@@ -1,6 +1,8 @@
 {
   "name": "TecnofinMining",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
   "id": "0d22a23d"
 }

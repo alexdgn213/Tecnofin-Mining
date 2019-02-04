@@ -1,0 +1,26 @@
+<ion-content padding>
+  <ion-grid style="height: 100%">
+    <ion-row justify-content-center align-items-center style="height: 95%">
+      <ion-col>
+        <img src="assets/imgs/LogoTransparente.png" class="logo">
+        <ion-item class="inputItem">
+          <ion-label position="floating" color="medium">Email</ion-label>
+          <ion-input type="email" class="textInput" [(ngModel)]="userData.email"></ion-input>
+        </ion-item>
+        <ion-item class="inputItem">
+          <ion-label position="floating" color="medium">Contraseña</ion-label>
+          <ion-input type="password" class="textInput" [(ngModel)]="userData.password"></ion-input>
+        </ion-item>
+        <ion-button class="botonPrincipal" expand="block" (click)='login();'>Iniciar sesión</ion-button>
+        <ion-button class="botonRegistro" style="text-transform: none;" fill="clear" expand="block" (click)='abrirRegistro();'>Haz click aqui para registrarte</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row justify-content-center align-items-center style="height: 5%">
+      <ion-col>
+        <ion-text color="medium">
+          <h5 class="textoCopyrigth">© Tecnofin Mining by Corporacion JSK | Todos los derechos reservados 2019</h5>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content> 

@@ -1,0 +1,42 @@
+ion-button{
+    --padding-bottom: 24px;
+    --padding-top: 24px
+}
+
+.inputItem{
+    margin-top: 8px;
+    border-radius: 5px;
+}
+
+ion-label,ion-input, ion-text, ion-button{
+    font-family: "sans-serif";
+}
+
+.logo{
+    margin-bottom: 10%;
+}
+
+.textoCopyrigth{
+    font-size: 9px;
+    text-align: center;
+}
+
+.botonPrincipal{
+    --background: rgb(1, 53, 83);
+    --background-activated: rgb(0, 123, 255);
+    margin-top: 20%;
+}
+
+.botonRegistro{
+    --background:"transparent";
+    --color : "medium";
+    margin-top: 10%;
+}
+
+.botonVolver{
+    --background:"transparent";
+    --color : "medium";
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
+
