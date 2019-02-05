@@ -1,0 +1,19 @@
+{
+
+  "login": "Iniciar Sesión",
+  "email" : "Email",
+  "password" : "Contraseña",
+  "registerM" : "Haz click aqui para registrarte",
+  "copyrigth" : "© Tecnofin Mining by Corporacion JSK | Todos los derechos reservados 2019",
+
+  "username" : "Usuario",
+  "name" : "Nombre",
+  "lastname" : "Apellido",
+  "phone" : "Telefono",
+  "passwordC" : "Confirmar Contraseña",
+  "register" : "Registrarse",
+  "back" : "cancelar",
+
+  "WELCOME": "Welcome",
+  "GREETING": "Hi, {{ value }}"
+}

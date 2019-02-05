@@ -1,0 +1,19 @@
+{
+
+  "login": "Log In",
+  "email" : "Email",
+  "password" : "Password",
+  "registerM" : "Click here to sing up",
+  "copyrigth" : "© Tecnofin Mining by Corporacion JSK | All rigths reserved 2019",
+
+  "username" : "Username",
+  "name" : "Name",
+  "lastname" : "Last Name",
+  "phone" : "Phone",
+  "passwordC" : "Repeat Password",
+  "register" : "Sing Up",
+  "back" : "Cancel",
+
+  "WELCOME": "Welcome",
+  "GREETING": "Hi, {{ value }}"
+}

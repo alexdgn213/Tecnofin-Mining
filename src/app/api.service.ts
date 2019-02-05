@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Storage } from '@ionic/storage';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,7 @@ export class ApiService {
   conectado : boolean;
 
 
-  constructor(private http: HttpClient, private storage: Storage) { 
+  constructor(private http: HttpClient, private storage: Storage, private translateService: TranslateService) { 
     this.getUserData();    
   }
 
@@ -29,6 +30,7 @@ export class ApiService {
     this.storage.get('conectado').then((val) => {
       this.conectado = val;
     }); 
+    this.translateService.use('es');
   }
 
   loginUser(user:any){
@@ -43,6 +45,16 @@ export class ApiService {
     this.storage.set('conectado', false); 
     this.nombreUsuario = '';
     this.conectado = false;
+  }
+
+  changeLanguage(){
+    if(this.translateService.currentLang == 'en'){
+      this.translateService.use('es');
+    }
+    else{
+      this.translateService.use('en');
+    }
+    
   }
 
   private extractData(res: Response) {
