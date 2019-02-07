@@ -15,5 +15,11 @@
   "back" : "cancelar",
 
   "WELCOME": "Welcome",
-  "GREETING": "Hi, {{ value }}"
+  "GREETING": "Hi, {{ value }}",
+
+  "home": "Dashboard",
+  "idioma": "Cambiar Idioma",
+  "logout": "Cerrar Sesión",
+  "profile": "Editar Perfil"
+
 }

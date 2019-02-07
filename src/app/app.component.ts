@@ -8,7 +8,8 @@ import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: 'app.component.html'
+  templateUrl: 'app.component.html',
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   public appPages = [
@@ -16,6 +17,16 @@ export class AppComponent {
       title: 'Home',
       url: '/home',
       icon: 'home'
+    },
+    {
+      title: 'List',
+      url: '/list',
+      icon: 'list'
+    },
+    {
+      title: 'List',
+      url: '/list',
+      icon: 'list'
     },
     {
       title: 'List',
@@ -40,6 +51,10 @@ export class AppComponent {
       this.translateService.setDefaultLang('es');
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      this.translateService.get('home').subscribe((text:string) => { this.appPages[0].title=text} );
+      this.translateService.get('idioma').subscribe((text:string) => { this.appPages[1].title=text} );
+      this.translateService.get('profile').subscribe((text:string) => { this.appPages[2].title=text} );
+      this.translateService.get('logout').subscribe((text:string) => { this.appPages[3].title=text} );
     });
   }
 }

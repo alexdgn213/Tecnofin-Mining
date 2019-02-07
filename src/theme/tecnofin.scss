@@ -12,6 +12,10 @@ ion-label,ion-input, ion-text, ion-button{
     font-family: "sans-serif";
 }
 
+ion-toolbar{
+    --color : "darkblue"
+}
+
 .logo{
     margin-bottom: 10%;
 }
@@ -22,8 +26,8 @@ ion-label,ion-input, ion-text, ion-button{
 }
 
 .botonPrincipal{
-    --background: rgb(1, 53, 83);
-    --background-activated: rgb(0, 123, 255);
+    --background: #013553;
+    --background-activated: #02263a;
     margin-top: 20%;
 }
 

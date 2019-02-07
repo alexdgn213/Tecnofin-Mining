@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Storage } from '@ionic/storage';
@@ -20,7 +20,7 @@ export class ApiService {
 
 
   constructor(private http: HttpClient, private storage: Storage, private translateService: TranslateService) { 
-    this.getUserData();    
+    this.getUserData();  
   }
 
   getUserData(){

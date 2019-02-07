@@ -11,7 +11,7 @@ import { LoadingController, AlertController } from '@ionic/angular';
 })
 export class LoginPage implements OnInit {
   userData = { email: '', password: '' };
-  public loading;
+  //public loading;
 
   constructor(private router: Router, private service:ApiService, public loadingController: LoadingController, 
     public alertController: AlertController) { }
@@ -21,9 +21,9 @@ export class LoginPage implements OnInit {
   }
 
   login(){
-    this.presentLoading();
+    //this.presentLoading();
     this.service.postData('login',this.userData).subscribe((data: any) => {
-      this.loading.dismiss();
+      //this.loading.dismiss();
       if(data.success==0 || data.errors!=null){
         this.presentError(data.errors[0]);
       }
@@ -33,7 +33,8 @@ export class LoginPage implements OnInit {
       }
     },
     (err) => {
-      this.loading.dismiss();
+      //this.loading.dismiss();
+      console.log(err);
       this.presentError("Revise su conexión");
     });
   }
@@ -46,12 +47,13 @@ export class LoginPage implements OnInit {
     this.router.navigate(['/registro'])
   }
 
-  async presentLoading() {
-    this.loading = await this.loadingController.create({
-      message: 'Por favor espere'
-    });
-    return await this.loading.present();
-  }
+  //async presentLoading() {
+    //
+    //this.loading = await this.loadingController.create({
+    //  message: 'Por favor espere'
+    //});
+    //return await this.loading.present();
+  //}
 
   async presentError(mensaje) {
     const alert = await this.alertController.create({

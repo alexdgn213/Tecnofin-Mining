@@ -86,3 +86,21 @@ $colors: (
   soft-pink:  #F58282,
   soft-grey:  #737373
 );
+
+.ion-color-darkblue {
+  --ion-color-base: #013553;
+  --ion-color-base-rgb: 1,53,83;
+  --ion-color-contrast: #ffffff;
+  --ion-color-contrast-rgb: 255,255,255;
+  --ion-color-shade: #012f49;
+  --ion-color-tint: #1a4964;
+}
+
+.ion-color-grayblue {
+  --ion-color-base: #2f4050;
+  --ion-color-base-rgb: 47,64,80;
+  --ion-color-contrast: #a7b1c2;
+  --ion-color-contrast-rgb: 167,177,194;
+  --ion-color-shade: #293846;
+  --ion-color-tint: #445362;
+}

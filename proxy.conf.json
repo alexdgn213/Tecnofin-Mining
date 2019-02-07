@@ -1,0 +1,7 @@
+{
+    "/api/*": {
+        "target": "http://tecnofinmining.corporacionjsk.es/api/login",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}
