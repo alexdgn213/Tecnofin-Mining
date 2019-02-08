@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { ApiService } from '../app/api.service';
 import { TranslateService } from '@ngx-translate/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -14,24 +15,34 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent {
   public appPages = [
     {
-      title: 'Home',
+      title: 'home',
       url: '/home',
       icon: 'home'
     },
     {
-      title: 'List',
+      title: 'transactions',
       url: '/list',
       icon: 'list'
     },
     {
-      title: 'List',
-      url: '/list',
-      icon: 'list'
+      title: 'buy',
+      url: '/buy',
+      icon: 'card'
     },
     {
-      title: 'List',
-      url: '/list',
-      icon: 'list'
+      title: 'profile',
+      url: '/profile',
+      icon: 'person'
+    },
+    {
+      title: 'language',
+      url: '/language',
+      icon: 'switch'
+    },
+    {
+      title: 'logout',
+      url: '/logout',
+      icon: 'log-out'
     }
   ];
 
@@ -40,7 +51,8 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     public service:ApiService,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private router: Router
     
   ) {
     this.initializeApp();
@@ -51,10 +63,20 @@ export class AppComponent {
       this.translateService.setDefaultLang('es');
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-      this.translateService.get('home').subscribe((text:string) => { this.appPages[0].title=text} );
-      this.translateService.get('idioma').subscribe((text:string) => { this.appPages[1].title=text} );
-      this.translateService.get('profile').subscribe((text:string) => { this.appPages[2].title=text} );
-      this.translateService.get('logout').subscribe((text:string) => { this.appPages[3].title=text} );
     });
+  }
+
+  handleMenu(url : string){
+    if(url=='/logout'){
+      this.service.logoutUser();
+      this.router.navigate(['/login'])
+    }
+    else if(url=='/language'){
+      this.service.changeLanguage();
+    }
+    else{
+      this.router.navigate([url])
+    }
+
   }
 }

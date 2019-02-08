@@ -18,8 +18,25 @@
   "GREETING": "Hi, {{ value }}",
 
   "home": "Dashboard",
-  "idioma": "Cambiar Idioma",
+  "language": "Cambiar Idioma",
   "logout": "Cerrar Sesión",
-  "profile": "Editar Perfil"
+  "profile": "Editar Perfil",
+  "transactions": "Transacciones",
+  "buy" : "Comprar Terahash",
 
+  "balance" : "Balance General",
+  "hashrate" : "HASHRATE",
+  "total" : "Total de BTC a la fecha",
+  "equivalencia" : "Equivalecia en Dólares",
+
+  "updateinfo" : "Actualizar Datos",
+  "newpassword" : "Nueva Contraseña",
+  "newpasswordC" : "Confirmar Contraseña",
+  "succed" : "Éxito",
+
+  "id" : "Id",
+  "amount" : "Monto",
+  "quantity" : "Cantidad",
+  "method" : "Método",
+  "date" : "Fecha"
 }

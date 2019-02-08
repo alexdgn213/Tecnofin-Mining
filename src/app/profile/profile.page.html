@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color="grayblue">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      {{ 'profile' | translate }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-grid style="height: 100%;padding-top: 32px">
+        <ion-row justify-content-center align-items-center style="height: 100%">
+          <ion-col>
+            <ion-item class="inputItem">
+              <ion-label position="floating" color="medium">{{ 'name' | translate }}</ion-label>
+              <ion-input type="text" class="textInput" [(ngModel)]="userData.name"></ion-input>
+            </ion-item>
+            <ion-item class="inputItem">
+              <ion-label position="floating" color="medium">{{ 'lastname' | translate }}</ion-label>
+              <ion-input type="text" class="textInput" [(ngModel)]="userData.lastname"></ion-input>
+            </ion-item>
+            <ion-item class="inputItem">
+              <ion-label position="floating" color="medium">{{ 'username' | translate }}</ion-label>
+              <ion-input type="text" class="textInput" [(ngModel)]="userData.username"></ion-input>
+            </ion-item>
+            <ion-item class="inputItem">
+              <ion-label position="floating" color="medium">{{ 'phone' | translate }}</ion-label>
+              <ion-input type="tel" class="textInput" [(ngModel)]="userData.phone"></ion-input>
+            </ion-item>
+            <ion-item class="inputItem">
+              <ion-label position="floating" color="medium">{{ 'email' | translate }}</ion-label>
+              <ion-input type="email" class="textInput" [(ngModel)]="userData.email"></ion-input>
+            </ion-item>
+            <ion-item class="inputItem">
+              <ion-label position="floating" color="medium">{{ 'newpassword' | translate }}</ion-label>
+              <ion-input type="password" class="textInput" [(ngModel)]="userData.password"></ion-input>
+            </ion-item>
+            <ion-item class="inputItem">
+              <ion-label position="floating" color="medium">{{ 'newpasswordC' | translate }}</ion-label>
+              <ion-input type="password" class="textInput" [(ngModel)]="userData.password_confirmation"></ion-input>
+            </ion-item>
+            <ion-button class="botonPrincipal" expand="block" (click)='startUpdate();'>{{ 'updateinfo' | translate }}</ion-button>
+            <ion-button class="botonVolver" expand="block" (click)='abrirHome();'>{{ 'back' | translate }}</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+</ion-content>

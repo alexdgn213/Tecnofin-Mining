@@ -19,8 +19,13 @@ export class RegistroPage implements OnInit {
   ngOnInit() {
   }
 
+  ionViewWillEnter(){
+    if(this.service.conectado){
+      this.abrirHome();
+    }
+  }
+
   registrarse(){
-    this.presentLoading();
     this.service.postData('register',this.userData).subscribe((data: any) => {
       this.loading.dismiss();
       if(data.success==0 || data.errors!=null){
@@ -40,11 +45,16 @@ export class RegistroPage implements OnInit {
     this.router.navigate(['/login'])
   }
 
-  async presentLoading() {
+  abrirHome() {
+    this.router.navigate(['/home'])
+  }
+
+  async startRegister() {
     this.loading = await this.loadingController.create({
       message: 'Por favor espere'
     });
-    return await this.loading.present();
+    await this.loading.present();
+    this.registrarse();
   }
 
   async presentError(mensaje) {

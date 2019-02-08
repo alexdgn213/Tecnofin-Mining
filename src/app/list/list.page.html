@@ -1,27 +1,99 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="grayblue">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      List
+      {{ 'transactions' | translate }}
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor="let item of items">
-      <ion-icon [name]="item.icon" slot="start"></ion-icon>
-      {{item.title}}
-      <div class="item-note" slot="end">
-        {{item.note}}
-      </div>
-    </ion-item>
-  </ion-list>
-  <!--
-    <div *ngIf="selectedItem" padding>
-      You navigated here from <b>{{selectedItem.title }}</b>
-    </div>
-  -->
+  <ion-card>
+      <ion-card-header color="darkblue">
+          <ion-grid>
+              <ion-row justify-content-center align-items-center >
+                <ion-col>
+                    <ion-text>
+                      <h1 class="textoTablaTitulo">
+                        {{'id' | translate}}
+                      </h1>
+                    </ion-text>
+                </ion-col>
+                <ion-col>
+                  <ion-text>
+                    <h1 class="textoTablaTitulo">
+                      {{'amount' | translate}}
+                    </h1>
+                  </ion-text>
+                </ion-col>
+                <ion-col>
+                  <ion-text>
+                    <h1 class="textoTablaTitulo">
+                      {{'quantity' | translate}}
+                    </h1>
+                  </ion-text>
+                </ion-col>
+                <ion-col>
+                  <ion-text>
+                    <h1 class="textoTablaTitulo">
+                      {{'method' | translate}}
+                    </h1>
+                  </ion-text>
+                </ion-col>
+                <ion-col>
+                  <ion-text>
+                    <h1 class="textoTablaTitulo">
+                      {{'date' | translate}}
+                    </h1>
+                  </ion-text>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+
+      </ion-card-header>
+      <ion-grid>
+          <ion-row justify-content-center align-items-center *ngFor="let item of transacciones">
+            <ion-col>
+              <ion-text>
+                <h1 class="textoTabla">
+                  {{item.transaction_id}}
+                </h1>
+              </ion-text>
+            </ion-col>
+            <ion-col>
+              <ion-text>
+                <h1 class="textoTabla">
+                  {{item.amount}}
+                </h1>
+              </ion-text>
+            </ion-col>
+            <ion-col>
+              <ion-text>
+                <h1 class="textoTabla">
+                  {{item.terahash_quantity}}
+                </h1>
+              </ion-text>
+            </ion-col>
+            <ion-col>
+              <ion-text>
+                <h1 class="textoTabla">
+                  {{metodos[item.payment_method_id].name}}
+                </h1>
+              </ion-text>
+            </ion-col>
+            <ion-col>
+              <ion-text>
+                <h1 class="textoTabla">
+                  {{item.created_at}}
+                </h1>
+              </ion-text>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      <ion-card-content>
+
+      </ion-card-content>
+  </ion-card>
 </ion-content>

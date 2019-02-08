@@ -8,7 +8,7 @@ ion-button{
     border-radius: 5px;
 }
 
-ion-label,ion-input, ion-text, ion-button{
+ion-label,ion-input, ion-text, ion-button, h5, h1{
     font-family: "sans-serif";
 }
 
@@ -25,10 +25,50 @@ ion-toolbar{
     text-align: center;
 }
 
+.textoTabla{
+    font-size: 10px;
+    text-align: center;
+}
+
+.textoTablaTitulo{
+    font-size: 12px;
+    text-align: center;
+}
+
+.textoPequeño{
+    font-size: 12px;
+    text-align: center;
+}
+
+.textoMediano{
+    font-size: 18px;
+    text-align: center;
+}
+
+.textoGrande{
+    font-size: 28px;
+    text-align: center;
+}
+
+
 .botonPrincipal{
     --background: #013553;
     --background-activated: #02263a;
     margin-top: 20%;
+}
+
+.cardAzul{
+    background-color: #013553;
+    padding-top: 16px;
+    padding-bottom: 24px;
+    border-radius: 5px
+}
+
+.cardRoja{
+    background-color: #ed5565;
+    padding-top: 22px;
+    padding-bottom: 30px;
+    border-radius: 5px
 }
 
 .botonRegistro{

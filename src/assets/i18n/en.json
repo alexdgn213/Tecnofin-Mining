@@ -15,5 +15,28 @@
   "back" : "Cancel",
 
   "WELCOME": "Welcome",
-  "GREETING": "Hi, {{ value }}"
+  "GREETING": "Hi, {{ value }}",
+
+  "home": "Dashboard",
+  "language": "Change Language",
+  "logout": "Log Out",
+  "profile": "Profile",
+  "transactions": "Transactions",
+  "buy" : "Buy Terahash",
+
+  "balance" : "Account Balance",
+  "hashrate" : "HASHRATE",
+  "total" : "Total of BTC to date",
+  "equivalencia" : "Total in Dolars",
+
+  "updateinfo" : "Update Info",
+  "newpassword" : "New Password",
+  "newpasswordC" : "Repeat New Password",
+  "succed" : "Success",
+
+  "id" : "Id",
+  "amount" : "Amount",
+  "quantity" : "Quantity",
+  "method" : "Method",
+  "date" : "Date"
 }

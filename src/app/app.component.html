@@ -7,16 +7,14 @@
         </ion-toolbar>
       </ion-header>
       <ion-content color="grayblue">
-        <ion-list>
           <ion-menu-toggle  auto-hide="false" *ngFor="let p of appPages">
-            <ion-item color="grayblue" [routerDirection]="'root'" [routerLink]="[p.url]">
+            <ion-item color="grayblue" [routerDirection]="'root'" (click)='handleMenu(p.url);'>
               <ion-icon color="medium" slot="start" [name]="p.icon"></ion-icon>
               <ion-label>
-                {{p.title}}
+                {{p.title | translate}}
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
-        </ion-list>
       </ion-content>
     </ion-menu>
     <ion-router-outlet main></ion-router-outlet>
