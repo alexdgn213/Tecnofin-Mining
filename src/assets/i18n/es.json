@@ -38,5 +38,14 @@
   "amount" : "Monto",
   "quantity" : "Cantidad",
   "method" : "Método",
-  "date" : "Fecha"
+  "date" : "Fecha",
+
+  "paymethod" : "Método de pago",
+  "select" : "Seleccione",
+  "totalc" : "Total: ",
+  "buyb" : "Comprar",
+  "invalidamount" : "Monto Inválido",
+
+  "loading" : "Por favor espere",
+  "checkconection" : "Revise su conexión"
 }

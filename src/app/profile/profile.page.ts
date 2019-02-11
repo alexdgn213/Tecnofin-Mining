@@ -30,7 +30,7 @@ export class ProfilePage implements OnInit {
 
   async startUpdate() {
     this.loading = await this.loadingController.create({
-      message: 'Por favor espere'
+      message: this.service.mensajeCargando
     });
     await this.loading.present();
     this.update();
@@ -50,7 +50,7 @@ export class ProfilePage implements OnInit {
     (err) => {
       console.log(err);
       this.loading.dismiss();
-      this.presentError("Revise su conexión");
+      this.presentError(this.service.mensajeError);
     });
   }
 
@@ -66,7 +66,7 @@ export class ProfilePage implements OnInit {
 
   async presentSucced(mensaje) {
     const alert = await this.alertController.create({
-      header: 'Éxito',
+      header: this.service.mensajeExito,
       message: mensaje,
       buttons: ['OK']
     });

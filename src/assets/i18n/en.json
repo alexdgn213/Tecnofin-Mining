@@ -38,5 +38,14 @@
   "amount" : "Amount",
   "quantity" : "Quantity",
   "method" : "Method",
-  "date" : "Date"
+  "date" : "Date",
+
+  "paymethod" : "Payment method",
+  "select" : "Select",
+  "totalc" : "Total: ",
+  "buyb" : "Buy",
+  "invalidamount" : "Invalid Amount",
+
+  "loading" : "Please Wait",
+  "checkconection" : "Check your conection"
 }

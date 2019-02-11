@@ -1,5 +1,5 @@
 <ion-header>
-    <ion-toolbar color="grayblue">
+  <ion-toolbar color="grayblue">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -10,5 +10,28 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-card>
+    <ion-item>
+      <ion-label>{{'paymethod' | translate}}</ion-label>
+      <ion-select placeholder="{{'select'|translate}}" [(ngModel)]="transaction.payment_method">
+        <ion-select-option *ngFor="let item of metodos" [value]=item.payment_method_id>{{item.name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item class="inputItem">
+      <ion-label position="floating" color="medium">{{ 'amount' | translate }}</ion-label>
+      <ion-input type="number" class="textInput" [(ngModel)]="transaction.amount"></ion-input>
+    </ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button class="botonVolver2" expand="block" (click)='regresar();'>{{ 'back' | translate }}</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button class="botonComprar" expand="block" (click)='startBuy();'>{{ 'buyb' | translate }}</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
+
+  </ion-card>
 </ion-content>

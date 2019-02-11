@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
 import { LoadingController, AlertController } from '@ionic/angular';
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -42,7 +41,7 @@ export class LoginPage implements OnInit {
     (err) => {
       this.loading.dismiss();
       console.log(err);
-      this.presentError("Revise su conexión");
+      this.presentError(this.service.mensajeCargando);
     });
   }
 
@@ -56,7 +55,7 @@ export class LoginPage implements OnInit {
 
   async startLogin() {  
     this.loading = await this.loadingController.create({
-      message: 'Por favor espere'
+      message: this.service.mensajeCargando
     });
     await this.loading.present();
     this.login();

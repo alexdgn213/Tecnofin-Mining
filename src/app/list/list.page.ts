@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
 import { LoadingController, AlertController } from '@ionic/angular';
 
-
 @Component({
   selector: 'app-list',
   templateUrl: 'list.page.html',
@@ -13,32 +12,9 @@ export class ListPage implements OnInit {
   public loading;
   public transacciones: Array<any>;
   public metodos: Array<any>;
-  private selectedItem: any;
-  private icons = [
-    'flask',
-    'wifi',
-    'beer',
-    'football',
-    'basketball',
-    'paper-plane',
-    'american-football',
-    'boat',
-    'bluetooth',
-    'build'
-  ];
-  public items: Array<{ title: string; note: string; icon: string }> = [];
-
 
   constructor(private router: Router, private service:ApiService, public loadingController: LoadingController, 
-    public alertController: AlertController) { 
-    for (let i = 1; i < 11; i++) {
-      this.items.push({
-        title: 'Item ' + i,
-        note: 'This is item #' + i,
-        icon: this.icons[Math.floor(Math.random() * this.icons.length)]
-      });
-    }
-  }
+    public alertController: AlertController) { }
 
   ngOnInit() {
   }
@@ -57,25 +33,22 @@ export class ListPage implements OnInit {
       this.metodos = data;
       this.service.getData('user/transactions/'+this.service.idUsuario).subscribe((data: any) => {
         this.transacciones = data.transactions;
-        console.log(this.transacciones);
         this.loading.dismiss();
       },
       (err) => {
-        console.log(err);
-        this.presentError("Revise su conexión");
+        this.presentError(this.service.mensajeError);
         this.loading.dismiss();
       });
     },
     (err) => {
       this.loading.dismiss();
-      console.log(err);
-      this.presentError("Revise su conexión");
+      this.presentError(this.service.mensajeError);
     });
   }
 
   async startLoading() {  
     this.loading = await this.loadingController.create({
-      message: 'Por favor espere'
+      message: this.service.mensajeCargando
     });
     await this.loading.present();
     this.getInfo();

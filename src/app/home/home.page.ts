@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
 import { LoadingController, AlertController } from '@ionic/angular';
 
-
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -46,20 +45,20 @@ export class HomePage {
       },
       (err) => {
         console.log(err);
-        this.presentError("Revise su conexión");
+        this.presentError(this.service.mensajeError);
         this.loading.dismiss();
       });
     },
     (err) => {
       this.loading.dismiss();
       console.log(err);
-      this.presentError("Revise su conexión");
+      this.presentError(this.service.mensajeError);
     });
   }
 
   async startLoading() {  
     this.loading = await this.loadingController.create({
-      message: 'Por favor espere'
+      message: this.service.mensajeCargando
     });
     await this.loading.present();
     this.getInfo();

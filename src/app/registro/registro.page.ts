@@ -37,7 +37,7 @@ export class RegistroPage implements OnInit {
     },
     (err) => {
       this.loading.dismiss();
-      this.presentError("Revise su conexión");
+      this.presentError(this.service.mensajeError);
     });
   }
 
@@ -51,7 +51,7 @@ export class RegistroPage implements OnInit {
 
   async startRegister() {
     this.loading = await this.loadingController.create({
-      message: 'Por favor espere'
+      message: this.service.mensajeCargando
     });
     await this.loading.present();
     this.registrarse();

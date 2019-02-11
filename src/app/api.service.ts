@@ -23,9 +23,15 @@ export class ApiService {
   telf : string;
   email : string;
 
+  public mensajeCargando;
+  public mensajeInvalido;
+  public mensajeError;
+  public mensajeExito;
+
 
   constructor(private http: HttpClient, private storage: Storage, private translateService: TranslateService) { 
     this.getUserData();  
+    this.setMessages();
   }
 
   getUserData(){
@@ -106,8 +112,31 @@ export class ApiService {
     }
     else{
       this.translateService.use('en');
-    }
-    
+    }    
+    this.setMessages();
+  }
+
+  setMessages(){
+    this.translateService.get('loading').subscribe(
+      value => {
+        this.mensajeCargando = value;
+      }
+    )
+    this.translateService.get('invalidamount').subscribe(
+      value => {
+        this.mensajeInvalido = value;
+      }
+    )
+    this.translateService.get('checkconection').subscribe(
+      value => {
+        this.mensajeError = value;
+      }
+    )
+    this.translateService.get('succed').subscribe(
+      value => {
+        this.mensajeExito = value;
+      }
+    )
   }
 
   private extractData(res: Response) {
