@@ -80,7 +80,7 @@ export class HomePage {
   
   async updateInfo() {
     while(true){
-      await this.sleep(5000);
+      await this.sleep(60000);
       this.service.getData('user/'+this.service.idUsuario).subscribe((data: any) => {
         this.balance = data.wallet.current_balance;
         this.hBalance = data.wallet.historic_balance;

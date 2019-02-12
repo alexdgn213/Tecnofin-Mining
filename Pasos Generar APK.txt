@@ -1,5 +1,5 @@
 
 1.- correr : ionic cordova build android --prod --release 
-2.- mover el apk generado a la carpeta principal
+2.- mover el apk generado a la carpeta principal : move C:\Users\alexd\Documents\Alexander\Proyectos\JSK\TecnofinMining\platforms\android\app\build\outputs\apk\release\app-release-unsigned.apk C:\Users\alexd\Documents\Alexander\Proyectos\JSK\TecnofinMining
 3.- correr (clave: 131313): jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore app-release-unsigned.apk alex
 4.- correr C:\Users\alexd\AppData\Local\Android\Sdk\build-tools\28.0.3\zipalign -v 4 app-release-unsigned.apk Tecnofin.apk
