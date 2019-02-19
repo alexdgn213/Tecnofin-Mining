@@ -12,7 +12,7 @@
   "phone" : "Telefono",
   "passwordC" : "Confirmar Contraseña",
   "register" : "Registrarse",
-  "back" : "cancelar",
+  "back" : "Cancelar",
 
   "WELCOME": "Welcome",
   "GREETING": "Hi, {{ value }}",
